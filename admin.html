@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteImperial Admin Dashboard</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- Header -->
+    <header class="header">
+
+        <div class="logo">
+            📚 <span>NoteImperial</span>
+        </div>
+
+        <div class="admin-info">
+            <span>👤 Admin</span>
+            <button id="logoutBtn">Logout</button>
+        </div>
+
+    </header>
+
+    <!-- Main -->
+    <main class="main-content">
+
+        <!-- Left Side -->
+        <section class="left-panel">
+
+            <h2>Add New Note</h2>
+
+            <input type="text" id="title" placeholder="Note Title">
+
+            <input type="text" id="subject" placeholder="Subject">
+
+            <select id="semester">
+                <option>Select Semester</option>
+                <option>Semester 1</option>
+                <option>Semester 2</option>
+                <option>Semester 3</option>
+                <option>Semester 4</option>
+                <option>Semester 5</option>
+                <option>Semester 6</option>
+            </select>
+
+            <input type="number" id="price" placeholder="Price">
+<label for="pdfFile">📄 Upload PDF</label>
+
+<input
+    type="file"
+    id="pdfFile"
+    accept=".pdf">
+            <textarea id="description" placeholder="Description"></textarea>
+
+            <button id="publishBtn">Publish Note</button>
+
+        </section>
+
+        <!-- Right Side -->
+        <section class="right-panel">
+
+            <h2>Uploaded Notes</h2>
+
+            <div id="notesList">
+
+    <p>No notes uploaded yet.</p>
+
+</div>
+
+<hr>
+
+<h2>💳 Payment Requests</h2>
+
+<div id="paymentsList">
+
+    <p>No payment requests yet.</p>
+
+</div>
+
+</section>
+<script type="module" src="admin.js"></script>
+
+</body>
+</html>

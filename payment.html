@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Get Your Notes - NoteImperial</title>
+
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+
+    <div class="payment-box">
+
+        <h1>📚 NoteImperial</h1>
+
+        <h2>Get Your Notes</h2>
+
+        <div class="note-details">
+            <h3 id="noteTitle">Loading...</h3>
+
+            <p><b>Subject:</b> <span id="noteSubject"></span></p>
+
+            <p><b>Semester:</b> <span id="noteSemester"></span></p>
+
+            <p><b>Price:</b> ₹<span id="notePrice"></span></p>
+        </div>
+
+        <div class="qr-box">
+            <h3>📱 How to Purchase</h3>
+
+            <p>1. Contact us on WhatsApp.</p>
+            <p>2. Tell us which notes you want to purchase.</p>
+            <p>3. We will send you our payment QR code.</p>
+            <p>4. Pay and share your transaction screenshot.</p>
+            <p>5. After payment verification, we will provide your notes.</p>
+
+            <a
+                id="whatsappContact"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="display:inline-block; padding:14px 20px; background:#25D366; color:white; text-decoration:none; border-radius:8px; font-weight:bold; margin-top:15px;"
+            >
+                🟢 Contact Us on WhatsApp
+            </a>
+        </div>
+
+        <p id="status"></p>
+
+    </div>
+
+    <script type="module">
+        const params = new URLSearchParams(window.location.search);
+
+        const title = params.get("title") || "Notes";
+        const subject = params.get("subject") || "-";
+        const semester = params.get("semester") || "-";
+        const price = params.get("price") || "0";
+
+        document.getElementById("noteTitle").textContent = title;
+        document.getElementById("noteSubject").textContent = subject;
+        document.getElementById("noteSemester").textContent = semester;
+        document.getElementById("notePrice").textContent = price;
+
+        const message =
+            "Assalamualaikum! I want to purchase notes from NoteImperial.\\n\\n" +
+            "Notes: " + title + "\\n" +
+            "Subject: " + subject + "\\n" +
+            "Semester: " + semester + "\\n" +
+            "Price: ₹" + price + "\\n\\n" +
+            "Please send me the payment QR code.";
+
+        document.getElementById("whatsappContact").href =
+            "https://wa.me/918178223905?text=" + encodeURIComponent(message);
+    </script>
+
+</body>
+</html>
